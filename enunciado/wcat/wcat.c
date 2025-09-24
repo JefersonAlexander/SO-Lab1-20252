@@ -2,12 +2,12 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-    //no se pasa ningún archivo
+    //ingresa en el if sino se pasa ningún archivo
     if (argc == 1) {
-        return 0; // termina normal sin imprimir nada
+        return 0; // termina de forma exitosa
     }
 
-    int error_flag = 0; // bandera para marcar si hubo errores
+    int error_flag = 0; // variable para marcar si hubo errores
 
     // Procesar cada archivo pasado como argumento
     for (int i = 1; i < argc; i++) {
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 
         char buffer[4096];
         while (fgets(buffer, sizeof buffer, fp) != NULL) {
-            fputs(buffer, stdout);
+            printf("%s", buffer);
         }
         fclose(fp);
     }

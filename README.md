@@ -27,6 +27,26 @@ Si no maneja estos conceptos; sobre todo los dos primeros, por favor estudielos 
 Tenga además en cuenta que se agregan bastantes ejemplos con el fin de que los analice con el fin de comprenderlos. Si tiene dificultades para entenderlos pregunte sin pena en el foro de piazza del curso y vea los videos que allí se compartieron. Recuerden, **No hay pregunta boba, bobo es el que no pregunta**
 
 
+rm -f wcat
+gcc -o wcat wcat.c -Wall -Werror
+
+rm -f wget
+gcc -o wgrep wget.c -Wall -Werror
+
+echo $?
+cat tests/1.rc
+cat tests-out/1.rc
+
+cat -A tests/1.rc
+cat -A tests-out/1.rc
+
+--Pra correr los text
+
+rm -rf tests-out
+./test-wcat.sh
+
+rm -rf tests-out
+./test-wgrep.sh
 
 
 
