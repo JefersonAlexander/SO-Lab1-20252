@@ -24,13 +24,13 @@ int main(int argc, char *argv[]) {
 
     char *searchterm = argv[1];
 
-    // sin archivos
+    // cuando no se pasa archivo 
     if (argc == 2) {
         search_in_file(searchterm, stdin);
         return 0;
     }
 
-    // con archivos
+    // cuando se pasa archivo
     for (int i = 2; i < argc; i++) {
         FILE *fp = fopen(argv[i], "r");
         if (fp == NULL) {

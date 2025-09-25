@@ -30,7 +30,7 @@ Tenga además en cuenta que se agregan bastantes ejemplos con el fin de que los 
 rm -f wcat
 gcc -o wcat wcat.c -Wall -Werror
 
-rm -f wget
+rm -f wgrep
 gcc -o wgrep wget.c -Wall -Werror
 
 echo $?
