@@ -2,18 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-int search_in_file(const char *searchterm, FILE *fp) {
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t nread;
+#define BUFSIZE 4096
 
-    while ((nread = getline(&line, &len, fp)) != -1) {
-        if (strstr(line, searchterm) != NULL) {
-            printf("%s", line);
+int search_in_file(const char *searchterm, FILE *fp) {
+    char buffer[BUFSIZE];
+
+    while (fgets(buffer, sizeof buffer, fp) != NULL) {
+        if (strstr(buffer, searchterm) != NULL) {
+            printf("%s", buffer);
         }
     }
 
-    free(line);
     return 0;
 }
 
